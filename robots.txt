@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Allow: /
-Sitemap: https://sitemap.xml
+Sitemap: https://apacetti.github.io/ReLaTeN/sitemap.xml
