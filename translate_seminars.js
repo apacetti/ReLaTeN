@@ -67,6 +67,16 @@
     var s = "Schedule hosted at";
     ts.innerHTML = ts.innerHTML.replace(s, _[s]);
 
+    // Cut past talks older than 2025
+    var t1 = "Reducción de funciones L de curvas elípticas módulo enteros";
+    var ts = target.querySelectorAll('div[daterange="past"] tr');
+    var cut = false;
+    for (var i=0; i < ts.length; ++i) {
+      var title = ts[i].querySelector('td.talktitle > a');
+      if (title && title.innerText == t1) cut = true;
+      if (cut) { ts[i].remove(); }
+    }
+
   }
 
 })();
