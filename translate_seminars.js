@@ -77,6 +77,25 @@
       if (cut) { ts[i].remove(); }
     }
 
+    // Add video link in talks
+    var ts = target.querySelectorAll('div.embedded_schedule > table');
+    for (var i=0; i < ts.length; ++i) {
+      var tr = ts[i].querySelectorAll('tbody > tr');
+      for (var j=0; j < tr.length; ++j) {
+        var td = document.createElement('td');
+        var kwargs = tr[j].querySelector('td.talktitle > a').getAttribute("kwargs");
+        var knowl = document.createElement("div"); knowl.innerHTML = kwargs;
+        var links = knowl.querySelectorAll('div.talk-details-container > p > a');
+        for (var k=0; k < links.length; ++k) {
+          if (links[k].innerHTML == "video") {
+            td.classList.add("video");
+            td.appendChild(links[k]);
+          }
+        }
+        tr[j].appendChild(td);
+      }
+    }
+
   }
 
 })();
