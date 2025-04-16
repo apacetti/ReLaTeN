@@ -1,0 +1,54 @@
+/* table caption */
+
+table caption {
+    margin-top: -0.3em;
+    font-size: 80%;
+}
+
+/* configure embedded_schedule */
+:root {
+  --knowl-background: #efefefbb;
+  --knowl-border-color: #cdcdcdcd;
+  --link-color: #0033bb;
+  --link-hover-color: black;
+  --link-hover-background: #c0c0c080;
+  --row-background-even: #dfd;
+  --row-background-odd: #fff;
+  --font: inherit;
+}
+
+div.embedded_schedule *[knowl] {
+    border-bottom: 1px dotted var(--link-color);
+}
+div.embedded_schedule *[knowl]:hover,
+div.embedded_schedule *[knowl].active {
+  border-bottom: 2px dotted var(--link-hover-color);
+  color: var(--link-hover-color);
+}
+
+/* adjust table.ntdata */
+div.embedded_schedule table.ntdata {
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+div.embedded_schedule table.ntdata th.yourtime {
+  text-align: center;
+  padding-right: 0;
+  padding-left: 0;
+}
+div.embedded_schedule table.ntdata td.monthdate {
+  text-align: center;
+  white-space: nowrap;
+  min-width: 0;
+}
+div.embedded_schedule table.ntdata td.speaker {
+  text-align: left;
+  white-space: normal;
+  min-width: 0;
+}
+div.embedded_schedule table.ntdata td.talktitle {
+  text-align: left;
+  white-space: normal;
+  min-width: 0;
+}
