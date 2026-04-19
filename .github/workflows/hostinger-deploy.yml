@@ -1,0 +1,15 @@
+name: Trigger Hostinger Git Pull
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping Hostinger Webhook
+        run: |
+          curl -X POST -H "Content-Type: application/json" -d '{}' ${{ secrets.HOSTINGER_WEBHOOK_URL }}
